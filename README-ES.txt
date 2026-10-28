@@ -1,14 +1,25 @@
-CRAZY RADIO ONLINE — VERSIÓN COMPLETA CORREGIDA
+CRAZY RADIO ONLINE — ACTUALIZACIÓN DEL LOGO
 
-SUBIR A GITHUB
-1. Descarga y descomprime este ZIP.
-2. Abre el repositorio https://github.com/sandovalroberto08-a11y/crazy-radio-online
-3. Add file > Upload files. Sube los cinco archivos a la raíz, sustituyendo index.html, manifest.webmanifest, sw.js e icon.svg si lo solicita.
-4. Pulsa Commit changes.
-5. Espera a que GitHub Pages despliegue y recarga la web con Ctrl+F5.
+1. Entra en tu repositorio:
+   https://github.com/sandovalroberto08-a11y/crazy-radio-online
 
-AUDIO
-La cuenta gratuita puede no permitir audio integrado en reproductores externos. Este botón abre la página oficial http://crazyradio.radio12345.com/; el audio se escucha en esa página, no incrustado dentro de esta app.
+2. Pulsa Add file > Upload files.
+3. Abre esta carpeta descomprimida y sube TODOS los archivos de esta carpeta a la raíz del repositorio:
+   index.html
+   manifest.webmanifest
+   sw.js
+   icon.svg
+   icon-192.png
+   icon-512.png
+   apple-touch-icon.png
+   README-ES.txt
+4. Si GitHub pregunta si quieres reemplazar archivos existentes, confirma.
+5. Abajo, pulsa Commit changes.
+6. Espera unos minutos y abre la web. En el ordenador, fuerza la actualización con Ctrl+F5.
 
-WhatsApp: https://wa.me/34640845500
-Lema: TRANSMITIENDO EMOCIONES
+IMPORTANTE:
+- No borres archivos antiguos del repositorio que no estén en este paquete.
+- Para comprobar el icono, abre la web y prueba el botón de radio.
+- Android: si el icono antiguo no cambia, elimina solo el acceso directo/app de la pantalla de inicio y vuelve a instalar desde Chrome.
+- iPhone: elimina el icono antiguo de la pantalla de inicio y vuelve a añadir la web desde Safari > Compartir > Añadir a pantalla de inicio.
+- La web y el streaming siguen usando la misma dirección.
