@@ -29,8 +29,16 @@ h1{font-size:30px;line-height:1.02;margin:8px 0;font-weight:950}h1 span{color:va
 <div class="footer">CRAZY RADIO ONLINE · MÚSICA Y EMOCIONES LAS 24 HORAS</div>
 </main>
 <script>
-/* IMPORTANTE: la dirección facilitada parece ser la página de escucha, no una URL directa de audio.
-   Cuando tengas el enlace directo MP3/AAC del panel, colócalo en STREAM_URL. */
+if (!STREAM_URL) {
+  window.open(
+    "http://crazyradio.radio12345.com/",
+    "_blank",
+    "noopener,noreferrer"
+  );
+  status.textContent =
+    "Abriendo Crazy Radio Online en Listen2MyRadio.";
+  return;
+}
 const STREAM_URL = "";
 const audio=document.getElementById('audio'), play=document.getElementById('play'), status=document.getElementById('status'), player=document.getElementById('player'), volume=document.getElementById('volume');
 audio.volume=.8;
