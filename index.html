@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="description" content="Crazy Radio Online: todos los ritmos latinos, mezclas en vivo. Transmitiendo emociones.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>Crazy Radio Online</title>
+<style>
+:root{color-scheme:dark;--y:#ffd329;--bg:#090a0c;--panel:#17191d;--muted:#a5a8ae}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+main{max-width:520px;margin:auto;min-height:100dvh;padding-bottom:24px;background:linear-gradient(#16130b 0,#090a0c 340px)}
+header{text-align:center;padding:27px 20px 23px;background:radial-gradient(ellipse at 50% 15%,#6a480a 0,#21190a 40%,#0a0a0b 78%)}
+.kicker{font-size:10px;letter-spacing:3px;color:var(--y);font-weight:800}.logo{width:94px;height:94px;border:2px solid var(--y);border-radius:50%;display:grid;place-items:center;margin:18px auto;background:linear-gradient(145deg,#252525,#050505);box-shadow:0 0 30px #ffd32935;font-size:31px;font-weight:1000;color:var(--y);letter-spacing:-3px}.logo span{color:#fff}
+h1{font-size:30px;line-height:1.02;margin:8px 0;font-weight:950}h1 span{color:var(--y)}.tagline{font-size:10px;letter-spacing:3px;color:#ddd;margin-top:12px}.live{display:inline-flex;align-items:center;gap:8px;border:1px solid #594819;border-radius:22px;padding:7px 13px;margin-top:18px;color:var(--y);font-size:11px}.dot{width:7px;height:7px;border-radius:50%;background:var(--y);box-shadow:0 0 8px var(--y)}
+.card{margin:0 15px 15px;padding:19px;background:var(--panel);border:1px solid #2b2d31;border-radius:18px}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--y);font-weight:800}.track{font-size:19px;font-weight:850;margin:9px 0 5px}.muted{font-size:12px;color:var(--muted);line-height:1.5}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}.play{width:65px;height:65px;border:0;border-radius:50%;background:var(--y);color:#111;font-size:25px;font-weight:900;flex-shrink:0;cursor:pointer}.play:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid white;outline-offset:3px}.eq{height:25px;display:flex;gap:3px;align-items:center;margin-top:12px}.eq i{width:3px;height:6px;border-radius:4px;background:var(--y)}.playing .eq i{animation:wave .55s infinite alternate}.playing .eq i:nth-child(2n){animation-delay:.2s}.playing .eq i:nth-child(3n){animation-delay:.35s}@keyframes wave{to{height:23px}}.status{font-size:11px;color:#b9bbc1;min-height:32px;margin-top:9px;line-height:1.45}.volrow{display:flex;justify-content:space-between;margin-top:12px;font-size:11px;color:var(--muted)}input[type=range]{width:100%;accent-color:var(--y);margin:10px 0 0}.section{padding:4px 15px 15px}.section h2{font-size:17px;margin:0 0 12px}.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{padding:14px 12px;background:linear-gradient(135deg,#202328,#121316);border:1px solid #2a2d31;border-radius:14px;min-height:94px}.emoji{font-size:21px;margin-bottom:9px}.tile b{display:block;font-size:13px;margin-bottom:4px}.tile small{font-size:11px;color:var(--muted)}.wa,.listen{display:block;text-align:center;text-decoration:none;border-radius:12px;padding:14px 10px;font-weight:850;font-size:13px;margin-top:12px}.wa{background:var(--y);color:#111}.listen{border:1px solid #62501d;color:var(--y);background:#211b0c}.note{font-size:11px;line-height:1.55;color:#999da5;margin:12px 2px 0}.footer{text-align:center;color:#747981;font-size:10px;padding:15px 12px}
+</style>
+</head>
+<body><main>
+<header><div class="kicker">CRAZY STUDIO RÉCORD PRESENTA</div><div class="logo" aria-label="Crazy Radio logo">CR<span>!</span></div><h1>CRAZY RADIO<br><span>ONLINE</span></h1><div class="tagline">TRANSMITIENDO EMOCIONES</div><div class="live"><i class="dot"></i> RADIO ONLINE</div></header>
+<section class="card" id="player"><div class="eyebrow">♫ · ESCÚCHANOS EN DIRECTO</div><div class="row"><div><div class="track">Todos los ritmos latinos</div><div class="muted">Crossover · Vallenato · Cumbia · Reggaetón · Bachata</div><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><button class="play" id="play" aria-label="Reproducir radio">▶</button></div><div class="status" id="status" role="status">Pulsa reproducir para intentar conectar con la emisión.</div><audio id="audio" preload="none" crossorigin="anonymous"></audio><div class="volrow"><span>VOLUMEN</span><span id="volnum">80%</span></div><input id="volume" type="range" min="0" max="100" value="80" aria-label="Volumen de la radio"></section>
+<section class="section"><h2>Tu radio, tu ambiente. 🔥</h2><div class="tiles"><div class="tile"><div class="emoji">🎧</div><b>Mezclas en vivo</b><small>La fiesta nunca para</small></div><div class="tile"><div class="emoji">🌎</div><b>Ritmos latinos</b><small>De Colombia para el mundo</small></div><div class="tile"><div class="emoji">🎙️</div><b>Programas</b><small>Voces y entretenimiento</small></div><div class="tile"><div class="emoji">💬</div><b>Participa</b><small>Tu mensaje puede sonar</small></div></div>
+<a class="wa" href="https://wa.me/34640845500" target="_blank" rel="noopener">💬 ENVÍA TU MENSAJE POR WHATSAPP</a>
+<a class="listen" href="http://crazyradio.radio12345.com/" target="_blank" rel="noopener">▶ ABRIR LA RADIO EN LISTEN2MYRADIO</a>
+<p class="note">Pide tu canción, manda una nota de voz y participa en nuestros programas.<br>WhatsApp: 640 845 500.</p></section>
+<div class="footer">CRAZY RADIO ONLINE · MÚSICA Y EMOCIONES LAS 24 HORAS</div>
+</main>
+<script>
+/* IMPORTANTE: la dirección facilitada parece ser la página de escucha, no una URL directa de audio.
+   Cuando tengas el enlace directo MP3/AAC del panel, colócalo en STREAM_URL. */
+const STREAM_URL = "";
+const audio=document.getElementById('audio'), play=document.getElementById('play'), status=document.getElementById('status'), player=document.getElementById('player'), volume=document.getElementById('volume');
+audio.volume=.8;
+function setPlaying(on){play.textContent=on?'Ⅱ':'▶';play.setAttribute('aria-label',on?'Pausar radio':'Reproducir radio');player.classList.toggle('playing',on)}
+play.addEventListener('click',async()=>{
+ if(!STREAM_URL){status.textContent='Para reproducir dentro de la app, falta la URL directa MP3/AAC del streaming. Abre “Listen2MyRadio” abajo para escuchar desde la página del proveedor.';return}
+ if(!audio.paused){audio.pause();setPlaying(false);return}
+ status.textContent='Conectando con Crazy Radio Online…';
+ try{audio.src=STREAM_URL;await audio.play();setPlaying(true);status.textContent='Conectado. ¡Transmitiendo emociones!'}catch(e){setPlaying(false);status.textContent='No se pudo reproducir el enlace. Comprueba la URL directa y que permita HTTPS/CORS.'}
+});
+audio.addEventListener('playing',()=>setPlaying(true));audio.addEventListener('pause',()=>setPlaying(false));audio.addEventListener('error',()=>{setPlaying(false);status.textContent='No se ha podido cargar el audio. Comprueba el enlace de streaming.'});
+volume.addEventListener('input',()=>{audio.volume=Number(volume.value)/100;document.getElementById('volnum').textContent=volume.value+'%'});
+if('serviceWorker' in navigator && location.protocol!=='file:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
+</script>
+</body></html>
