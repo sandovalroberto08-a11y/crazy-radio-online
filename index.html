@@ -36,7 +36,16 @@ const audio=document.getElementById('audio'), play=document.getElementById('play
 audio.volume=.8;
 function setPlaying(on){play.textContent=on?'Ⅱ':'▶';play.setAttribute('aria-label',on?'Pausar radio':'Reproducir radio');player.classList.toggle('playing',on)}
 play.addEventListener('click',async()=>{
- if(!STREAM_URL){status.textContent='Para reproducir dentro de la app, falta la URL directa MP3/AAC del streaming. Abre “Listen2MyRadio” abajo para escuchar desde la página del proveedor.';return}
+if (!STREAM_URL) {
+  window.open(
+    "http://crazyradio.radio12345.com/",
+    "_blank",
+    "noopener,noreferrer"
+  );
+  status.textContent =
+    "Abriendo Crazy Radio Online en Listen2MyRadio.";
+  return;
+}
  if(!audio.paused){audio.pause();setPlaying(false);return}
  status.textContent='Conectando con Crazy Radio Online…';
  try{audio.src=STREAM_URL;await audio.play();setPlaying(true);status.textContent='Conectado. ¡Transmitiendo emociones!'}catch(e){setPlaying(false);status.textContent='No se pudo reproducir el enlace. Comprueba la URL directa y que permita HTTPS/CORS.'}
