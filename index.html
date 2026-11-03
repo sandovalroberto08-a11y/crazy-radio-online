@@ -1,31 +1,141 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#090a0c">
-<meta name="description" content="Crazy Radio Online: todos los ritmos latinos. Transmitiendo emociones.">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
-<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
 <title>Crazy Radio Online</title>
+
 <style>
-:root{color-scheme:dark;--y:#ffd329;--bg:#090a0c;--panel:#17191d;--muted:#a5a8ae}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}main{max-width:520px;margin:auto;min-height:100dvh;padding-bottom:24px;background:linear-gradient(#16130b 0,#090a0c 340px)}header{text-align:center;padding:27px 20px 23px;background:radial-gradient(ellipse at 50% 15%,#6a480a 0,#21190a 40%,#0a0a0b 78%)}.kicker{font-size:10px;letter-spacing:3px;color:var(--y);font-weight:800}.logo{width:94px;height:94px;border:2px solid var(--y);border-radius:50%;display:grid;place-items:center;margin:18px auto;background:linear-gradient(145deg,#252525,#050505);box-shadow:0 0 30px #ffd32935;font-size:31px;font-weight:1000;color:var(--y);letter-spacing:-3px}.logo span{color:#fff}h1{font-size:30px;line-height:1.02;margin:8px 0;font-weight:950}h1 span{color:var(--y)}.tagline{font-size:10px;letter-spacing:3px;color:#ddd;margin-top:12px}.live{display:inline-flex;align-items:center;gap:8px;border:1px solid #594819;border-radius:22px;padding:7px 13px;margin-top:18px;color:var(--y);font-size:11px}.dot{width:7px;height:7px;border-radius:50%;background:var(--y);box-shadow:0 0 8px var(--y)}.card{margin:0 15px 15px;padding:19px;background:var(--panel);border:1px solid #2b2d31;border-radius:18px}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--y);font-weight:800}.track{font-size:19px;font-weight:850;margin:9px 0 5px}.muted{font-size:12px;color:var(--muted);line-height:1.5}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}.play{width:65px;height:65px;border:0;border-radius:50%;background:var(--y);color:#111;font-size:25px;font-weight:900;flex-shrink:0;cursor:pointer}.play:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid white;outline-offset:3px}.eq{height:25px;display:flex;gap:3px;align-items:center;margin-top:12px}.eq i{width:3px;height:6px;border-radius:4px;background:var(--y)}.status{font-size:11px;color:#b9bbc1;min-height:36px;margin-top:9px;line-height:1.45}.section{padding:4px 15px 15px}.section h2{font-size:17px;margin:0 0 12px}.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{padding:14px 12px;background:linear-gradient(135deg,#202328,#121316);border:1px solid #2a2d31;border-radius:14px;min-height:94px}.emoji{font-size:21px;margin-bottom:9px}.tile b{display:block;font-size:13px;margin-bottom:4px}.tile small{font-size:11px;color:var(--muted)}.wa,.listen{display:block;text-align:center;text-decoration:none;border-radius:12px;padding:14px 10px;font-weight:850;font-size:13px;margin-top:12px}.wa{background:var(--y);color:#111}.listen{border:1px solid #62501d;color:var(--y);background:#211b0c}.note{font-size:11px;line-height:1.55;color:#999da5;margin:12px 2px 0}.footer{text-align:center;color:#747981;font-size:10px;padding:15px 12px}
-</style></head><body><main>
-<header><div class="kicker">CRAZY STUDIO RÉCORD PRESENTA</div><div class="logo" aria-label="Crazy Radio logo">CR<span>!</span></div><h1>CRAZY RADIO<br><span>ONLINE</span></h1><div class="tagline">TRANSMITIENDO EMOCIONES</div><div class="live"><i class="dot"></i> RADIO ONLINE</div></header>
-<section class="card" id="player"><div class="eyebrow">♫ · ESCÚCHANOS EN DIRECTO</div><div class="row"><div><div class="track">Todos los ritmos latinos</div><div class="muted">Crossover · Vallenato · Cumbia · Reggaetón · Bachata</div><div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><button class="play" id="play" aria-label="Abrir la radio">▶</button></div><div class="status" id="status" role="status">Pulsa reproducir para abrir la emisora oficial.</div></section>
-<section class="section"><h2>Tu radio, tu ambiente. 🔥</h2><div class="tiles"><div class="tile"><div class="emoji">🎧</div><b>Mezclas en vivo</b><small>La fiesta nunca para</small></div><div class="tile"><div class="emoji">🌎</div><b>Ritmos latinos</b><small>De Colombia para el mundo</small></div><div class="tile"><div class="emoji">🎙️</div><b>Programas</b><small>Voces y entretenimiento</small></div><div class="tile"><div class="emoji">💬</div><b>Participa</b><small>Tu mensaje puede sonar</small></div></div><a class="wa" href="https://wa.me/34640845500" target="_blank" rel="noopener noreferrer">💬 ENVÍA TU MENSAJE POR WHATSAPP</a><a class="listen" href="http://crazyradio.radio12345.com/" target="_blank" rel="noopener noreferrer">▶ ABRIR LA RADIO EN LISTEN2MYRADIO</a><p class="note">Pide tu canción, manda una nota de voz y participa en nuestros programas.<br>WhatsApp: 640 845 500.</p></section><div class="footer">CRAZY RADIO ONLINE · MÚSICA Y EMOCIONES LAS 24 HORAS</div>
-</main><script>
-(function(){
-"use strict";
-const RADIO_URL="http://crazyradio.radio12345.com/";
-const play=document.getElementById("play");
-const status=document.getElementById("status");
-/* La cuenta gratuita se escucha desde la página oficial del proveedor. */
-play.addEventListener("click",function(){
-  const tab=window.open(RADIO_URL,"_blank","noopener,noreferrer");
-  if(tab){status.textContent="Emisora abierta en otra pestaña. Si no se oye, pulsa reproducir en Listen2MyRadio.";}
-  else {status.textContent="El navegador bloqueó la pestaña nueva. Usa el enlace de Listen2MyRadio que aparece abajo.";window.location.href=RADIO_URL;}
-});
-})();
-</script></body></html>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#090909;
+color:white;
+text-align:center;
+}
+header{
+padding:35px 15px;
+background:linear-gradient(135deg,#111,#292929);
+border-bottom:3px solid #ffd329;
+}
+.logo{
+font-size:clamp(30px,8vw,48px);
+font-weight:900;
+color:#ffd329;
+letter-spacing:2px;
+}
+.subtitle{
+color:#ccc;
+letter-spacing:4px;
+font-size:12px;
+margin-top:10px;
+}
+.live{
+margin:25px auto;
+display:inline-block;
+color:#ff4545;
+font-weight:bold;
+}
+.dot{
+display:inline-block;
+width:10px;
+height:10px;
+background:#ff3030;
+border-radius:50%;
+margin-right:8px;
+}
+main{padding:20px}
+.card{
+max-width:500px;
+margin:15px auto;
+padding:30px 20px;
+background:#171717;
+border:1px solid #333;
+border-radius:22px;
+}
+h1{font-size:28px;margin:10px 0}
+h2{color:#ffd329}
+p{color:#bbb;line-height:1.6}
+button{
+background:#ffd329;
+color:#090909;
+border:0;
+border-radius:50px;
+padding:17px 30px;
+font-size:18px;
+font-weight:bold;
+width:100%;
+max-width:300px;
+margin-top:20px;
+}
+button:active{transform:scale(.97)}
+footer{
+padding:30px;
+color:#888;
+font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">CRAZY RADIO</div>
+<div class="subtitle">ONLINE · TODOS LOS RITMOS</div>
+</header>
+
+<div class="live">
+<span class="dot"></span> TRANSMITIENDO EMOCIONES
+</div>
+
+<main>
+
+<section class="card">
+<h1>¡TU RADIO, TU AMBIENTE!</h1>
+<p>
+Música crossover 24/7.<br>
+Los mejores ritmos latinos.<br>
+Mezclas, programas y emociones.
+</p>
+
+<h2>ESCUCHA EN DIRECTO</h2>
+
+<button onclick="window.open('https://crazyradio.radio12345.com/','_blank')">
+▶ ESCUCHAR CRAZY RADIO
+</button>
+
+<p>¡Dale al play y disfruta de nuestra música!</p>
+</section>
+
+<section class="card">
+<h2>CRAZY RADIO ONLINE</h2>
+<p>
+Cumbia · Vallenato · Reggaetón<br>
+Bachata · Salsa · Despecho<br>
+Electrónica · Crossover
+</p>
+</section>
+
+<section class="card">
+<h2>¡PARTICIPA CON NOSOTROS!</h2>
+<p>
+Envía tus notas de audio y mensajes
+a nuestro WhatsApp.
+</p>
+<a href="https://wa.me/34640845500">
+<button>WHATSAPP</button>
+</a>
+</section>
+
+</main>
+
+<footer>
+CRAZY RADIO ONLINE<br>
+TRANSMITIENDO EMOCIONES © 2026
+</footer>
+
+</body>
+</html>
