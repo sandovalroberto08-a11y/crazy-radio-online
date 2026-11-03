@@ -2,52 +2,81 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#050505">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Crazy Radio Online | Transmitiendo emociones</title>
+
 <style>
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:#050505}
-body{font-family:Arial,Helvetica,sans-serif;color:#fff}
-.radio-page{position:relative;width:100%;max-width:1024px;margin:0 auto;line-height:0}
-.artwork{display:block;width:100%;height:auto}
-.control{position:absolute;border:0;background:transparent;cursor:pointer;padding:0;line-height:normal}
-.control:focus-visible{outline:3px solid #fff;outline-offset:3px}
-#play-toggle{left:7.5%;top:40.1%;width:17.5%;height:9.6%;border-radius:50%}
-#volume{position:absolute;left:71.7%;top:46.7%;width:18%;height:2.2%;opacity:.02;cursor:pointer}
-#whatsapp-link{left:7%;top:76.5%;width:87%;height:7.3%;border-radius:50px}
-#listen-link{left:0;top:0;width:0;height:0}
-#status{position:fixed;left:12px;bottom:12px;z-index:5;background:#111;border:1px solid #ffd400;color:#ffd400;border-radius:8px;padding:9px 12px;font-size:13px;line-height:1.3;display:none;max-width:calc(100vw - 24px)}
-#status.show{display:block}
-@media(min-width:1025px){.radio-page{box-shadow:0 0 40px #111}}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #050505;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.contenedor {
+  max-width: 1024px;
+  margin: auto;
+  padding: 15px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.boton {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 18px 35px;
+  background: #ffcc00;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px;
+  box-shadow: 0 0 20px #ffcc00;
+}
+
+.boton:hover {
+  background: white;
+}
+
+.texto {
+  color: #ffcc00;
+  font-size: 16px;
+}
 </style>
 </head>
+
 <body>
-<main class="radio-page" aria-label="Crazy Radio Online">
-  <img class="artwork" src="crazy-radio-design.jpg" alt="Crazy Radio Online: transmitiendo emociones. Programas en vivo, mezclas, música crossover y WhatsApp.">
-  <button id="play-toggle" class="control" type="button" aria-label="Reproducir Crazy Radio Online" title="Reproducir / pausar"></button>
-  <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volumen">
-  <a id="whatsapp-link" class="control" href="https://wa.me/34640845500" target="_blank" rel="noopener" aria-label="Enviar nota de audio por WhatsApp"></a>
-  <audio id="radio-audio" preload="none" src="https://crazyradio.radio12345.com/stream"></audio>
-</main>
-<div style="max-width:1024px;margin:0 auto;padding:14px;text-align:center;line-height:1.4;background:#050505"><a href="https://crazyradio.radio12345.com/" target="_blank" rel="noopener" style="display:inline-block;padding:12px 20px;border:1px solid #ffd400;border-radius:24px;color:#ffd400;text-decoration:none;font-weight:bold">ABRIR LA EMISORA OFICIAL EN LISTEN2MYRADIO</a></div>
-<div id="status" role="status" aria-live="polite"></div>
-<script>
-const audio=document.getElementById('radio-audio');
-const playButton=document.getElementById('play-toggle');
-const volume=document.getElementById('volume');
-const statusBox=document.getElementById('status');
-function showStatus(message){statusBox.textContent=message;statusBox.classList.add('show');}
-playButton.addEventListener('click',async()=>{
-  if(!audio.paused){audio.pause();playButton.setAttribute('aria-label','Reproducir Crazy Radio Online');showStatus('Radio pausada');return;}
-  showStatus('Conectando con Crazy Radio Online…');
-  try{await audio.play();playButton.setAttribute('aria-label','Pausar Crazy Radio Online');showStatus('🔴 CRAZY RADIO ONLINE EN DIRECTO');}
-  catch(e){showStatus('No se pudo conectar el reproductor. Pulsa “Abrir la radio oficial” para escucharla.');}
-});
-volume.addEventListener('input',()=>{audio.volume=Number(volume.value);});
-audio.addEventListener('playing',()=>showStatus('🔴 CRAZY RADIO ONLINE EN DIRECTO'));
-audio.addEventListener('pause',()=>{if(audio.currentTime>0)showStatus('Radio pausada');});
-audio.addEventListener('error',()=>showStatus('El enlace directo de audio no responde. Puedes abrir la emisora oficial desde Listen2MyRadio.'));
-</script>
+
+<div class="contenedor">
+
+<img src="diseño-radio-loco.jpg"
+alt="Crazy Radio Online - Transmitiendo emociones">
+
+<a class="boton"
+href="https://crazyradio.radio12345.com/"
+target="_blank"
+rel="noopener noreferrer">
+🔴 ESCUCHAR EN DIRECTO
+</a>
+
+<p class="texto">
+CRAZY RADIO ONLINE · TODOS LOS RITMOS
+</p>
+
+<p>
+Transmitiendo emociones
+</p>
+
+</div>
+
 </body>
 </html>
