@@ -10,41 +10,61 @@
 <link rel="manifest" href="manifest.webmanifest">
 <title>Crazy Radio Online</title>
 <style>
-*{box-sizing:border-box}html,body{margin:0;background:#050505;color:#fff;font-family:Arial,sans-serif}
-main{max-width:650px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;align-items:center}
-.art{width:100%;height:auto;display:block}
-.player{width:100%;padding:18px 20px 28px;text-align:center;background:#050505}
-button{background:#ffd400;color:#050505;border:0;border-radius:40px;padding:16px 34px;font-size:18px;font-weight:800;cursor:pointer}
-#status{margin-top:12px;color:#ffd400;font-size:14px;min-height:20px}
-input{width:min(260px,80%);accent-color:#ffd400;margin-top:14px}
-</style>
-</head>
-<body>
-<main>
-<img class="art" src="crazy-radio-design.jpg" alt="Crazy Radio Online — Transmitiendo emociones">
-<section class="player">
-<button id="play" type="button">▶ ESCUCHAR EN DIRECTO</button>
-<div id="status" role="status">Pulsa PLAY para escuchar la emisora</div>
-<label for="volume">VOLUMEN</label><br>
-<input id="volume" type="range" min="0" max="1" step="0.01" value="0.8">
-<audio id="audio" preload="none" src="<audio id="radio-audio" preload="none"
-src="https://uk15freenew.listen2myradio.com/live.mp3?typeportmount=s1_35214_stream_327418962">
-</audio>"></audio>
+*{box-sizing:border-box}body{margin:0;background:#050505;color:#fff;font-family:Arial,sans-serif}
+main{max-width:850px;margin:0 auto;padding:14px;min-height:100vh}
+.art{width:100%;height:auto;display:block;border-radius:12px}
+.brand{text-align:center;color:#ffd400;font-weight:900;letter-spacing:2px;font-size:clamp(22px,5vw,36px);margin:15px 0 5px}
+.tag{text-align:center;color:#eee;margin:0 0 14px}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:15px 0}
+nav button,.action{background:#111;color:#ffd400;border:1px solid #ffd400;border-radius:40px;padding:12px 16px;font-weight:bold;cursor:pointer}
+nav button.active,.action.primary{background:#ffd400;color:#050505}
+.panel{display:none;background:#101010;border:1px solid #555;border-radius:18px;padding:20px;margin:12px 0;text-align:center}
+.panel.active{display:block}.panel h2{margin:10px 0 20px}
+#play{font-size:18px;padding:16px 30px}.status{color:#ffd400;margin:14px 0;min-height:20px}
+input[type=range]{width:min(300px,90%);accent-color:#ffd400;margin:12px}
+.socials{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:18px}
+.socials a{color:#ffd400;text-decoration:none;border:1px solid #555;padding:10px 14px;border-radius:25px}
+.edit{text-align:left}.edit label{display:block;color:#ffd400;margin-top:12px}
+.edit input,.edit textarea{width:100%;padding:10px;margin-top:5px;background:#222;color:#fff;border:1px solid #555;border-radius:8px}
+.footer{text-align:center;color:#aaa;font-size:12px;margin:20px}
+</style></head>
+<body><main>
+<img class="art" src="crazy-radio-design.jpg" alt="Crazy Radio Online - Transmitiendo emociones">
+<div class="brand">CRAZY RADIO ONLINE</div>
+<p class="tag">🔴 TRANSMITIENDO EMOCIONES · TODOS LOS RITMOS</p>
+<nav>
+<button class="active" data-tab="inicio">INICIO</button>
+<button data-tab="programacion">PROGRAMACIÓN</button>
+<button data-tab="laradio">LA RADIO</button>
+<button data-tab="galeria">GALERÍA</button>
+<button data-tab="contacto">CONTACTO</button>
+<button data-tab="ajustes">⚙ PERSONALIZAR</button>
+</nav>
+<section id="inicio" class="panel active"><h2>¡TU RADIO, TU MÚSICA!</h2>
+<button id="play" class="action primary">▶ ESCUCHAR EN DIRECTO</button>
+<div id="status" class="status">Pulsa PLAY para escuchar la emisora</div>
+<label>VOLUMEN<br><input id="volume" type="range" min="0" max="1" step="0.01" value="0.8"></label>
 </section>
-</main>
+<section id="programacion" class="panel"><h2>📻 PROGRAMACIÓN</h2><div id="schedule">Todos los ritmos latinos, mezclas en vivo y programas especiales. ¡Muy pronto publicaremos la programación!</div></section>
+<section id="laradio" class="panel"><h2>🎧 LA RADIO</h2><p>Crazy Radio Online: música crossover, todos los ritmos latinos, programas y mezclas en vivo. Música las 24 horas. ¡Transmitiendo emociones!</p></section>
+<section id="galeria" class="panel"><h2>📸 GALERÍA</h2><p>Fotos y momentos de Crazy Radio Online.</p><div id="gallery"></div></section>
+<section id="contacto" class="panel"><h2>📲 CONTACTO</h2><p>¡Escríbenos por WhatsApp!</p><a class="action primary" href="https://wa.me/34640845500" target="_blank" rel="noopener">ABRIR WHATSAPP · 640 845 500</a>
+<div class="socials" id="socials"><a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a><a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a></div></section>
+<section id="ajustes" class="panel edit"><h2>⚙ PERSONALIZAR TU RADIO</h2><p>Edita programación y redes sociales. Los cambios se guardan en el navegador que estés usando.</p>
+<label>Programación</label><textarea id="editSchedule" rows="4"></textarea>
+<label>Enlace TikTok</label><input id="tiktok" placeholder="https://www.tiktok.com/@tuusuario">
+<label>Enlace Instagram</label><input id="instagram" placeholder="https://www.instagram.com/tuusuario">
+<label>Enlace Facebook</label><input id="facebook" placeholder="https://www.facebook.com/tupagina">
+<label>Enlace YouTube</label><input id="youtube" placeholder="https://www.youtube.com/@tucanal">
+<button id="save" class="action primary">💾 GUARDAR CAMBIOS</button><div id="saved" class="status"></div>
+</section><div class="footer">CRAZY RADIO ONLINE · TRANSMITIENDO EMOCIONES</div></main>
+<audio id="audio" preload="none" src="https://uk15freenew.listen2myradio.com/live.mp3?typeportmount=s1_35214_stream_327418962"></audio>
 <script>
-const audio=document.getElementById('audio'), play=document.getElementById('play'), status=document.getElementById('status'), volume=document.getElementById('volume');
-audio.volume=Number(volume.value);
-volume.addEventListener('input',()=>audio.volume=Number(volume.value));
-play.addEventListener('click',async()=>{
- if(!audio.paused){audio.pause();play.textContent='▶ ESCUCHAR EN DIRECTO';status.textContent='Radio pausada';return}
- status.textContent='Conectando con Crazy Radio Online…';
- try{await audio.play();play.textContent='❚❚ PAUSAR RADIO';status.textContent='🔴 CRAZY RADIO ONLINE EN DIRECTO'}
- catch(e){status.textContent='No se pudo conectar el stream. Revisa la dirección de audio.'}
-});
-audio.addEventListener('playing',()=>status.textContent='🔴 CRAZY RADIO ONLINE EN DIRECTO');
-audio.addEventListener('error',()=>status.textContent='No responde el enlace de audio. Necesitamos verificar el stream.');
-if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
-</script>
-</body>
-</html>
+const audio=document.getElementById('audio'),play=document.getElementById('play'),status=document.getElementById('status');
+document.querySelectorAll('[data-tab]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(btn.dataset.tab).classList.add('active')}));
+play.addEventListener('click',async()=>{if(audio.paused){status.textContent='Conectando con Crazy Radio Online…';try{await audio.play();play.textContent='❚❚ PAUSAR RADIO';status.textContent='🔴 CRAZY RADIO ONLINE EN DIRECTO'}catch(e){status.textContent='No se pudo conectar. Comprueba el enlace de emisión.'}}else{audio.pause();play.textContent='▶ ESCUCHAR EN DIRECTO';status.textContent='Radio pausada'}});
+document.getElementById('volume').addEventListener('input',e=>audio.volume=Number(e.target.value));
+const keys=['tiktok','instagram','facebook','youtube'];
+function load(){document.getElementById('editSchedule').value=localStorage.getItem('crazySchedule')||document.getElementById('schedule').textContent;keys.forEach((k,i)=>{let v=localStorage.getItem('crazy_'+k)||'';document.getElementById(k).value=v;if(v)document.querySelector('#socials a:nth-child('+(i+1)+')').href=v})}
+document.getElementById('save').addEventListener('click',()=>{const s=document.getElementById('editSchedule').value;localStorage.setItem('crazySchedule',s);document.getElementById('schedule').textContent=s;keys.forEach((k,i)=>{let v=document.getElementById(k).value.trim();localStorage.setItem('crazy_'+k,v);if(v)document.querySelector('#socials a:nth-child('+(i+1)+')').href=v});document.getElementById('saved').textContent='✅ Cambios guardados en este navegador.'});load();
+</script></body></html>
